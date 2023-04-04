@@ -1,0 +1,21 @@
+/* .taskForm {
+  max-width: 1088px;
+  min-height: 179px;
+  background-color: #ecf0f1;
+  border-radius: 20px;
+} */
+
+.taskForm {
+  margin-bottom: 43px;
+  margin-right: 28px;
+  max-width: 1088px;
+  min-height: 179px;
+  background-color: #ecf0f1;
+
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  /* display: flex;
+  align-items: center; */
+  /* justify-content: space-between; */
+}

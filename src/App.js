@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./app.css";
+import TaskForm from "./components/taskForm/taskForm";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = (task) => setTasks([...tasks, task]);
+
+  const deleteTask = (taskToDelete) => {
+    const newTasks = tasks.filter((task) => task.id !== taskToDelete.id);
+
+    setTasks(newTasks);
+  };
+
+  const deleteDay = (dayToDelete) => {
+    const newTasks = tasks.filter((task) => task.day !== dayToDelete);
+
+    setTasks(newTasks);
+  };
+
+  const changeTask = (taskToChange) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id == taskToChange.id) {
+        task.importance = !task.importance;
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <TaskForm
+        addTask={addTask}
+        tasks={tasks}
+        deleteTask={deleteTask}
+        deleteDay={deleteDay}
+        changeTask={changeTask}
+      />
     </div>
   );
-}
+};
 
 export default App;

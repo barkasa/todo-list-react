@@ -1,0 +1,82 @@
+.task_form {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 1rem; */
+  justify-content: space-between;
+}
+.input_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.day_form:focus,
+.input_task[type="text"]:focus,
+.importance_form:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #6b6b6d;
+  color: #000000;
+}
+
+.day_form,
+.importance_form {
+  width: 254px;
+  height: 45px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+.input_task {
+  width: 544px;
+  height: 45px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.button_task {
+  margin-top: 70px;
+  width: 163px;
+  height: 45px;
+  background-color: #1abc9c;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.button_task:hover {
+  outline: none;
+  box-shadow: 0 0 0 2px #6b6b6d;
+  background-color: #158f76;
+}
+.input_first {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+/* .input_group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.day_form,
+.importance_form {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.input_task {
+  flex: 3;
+}
+
+.button_task {
+  margin-left: 1rem;
+  flex: 1;
+} */
