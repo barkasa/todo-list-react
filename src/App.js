@@ -1,6 +1,6 @@
 import "./app.css";
 import TaskForm from "./components/taskForm/taskForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
@@ -28,6 +28,13 @@ const App = () => {
     });
     setTasks(newTasks);
   };
+  useEffect(() => {
+    let newTasks = JSON.parse(localStorage.getItem("tasks")) || tasks;
+    setTasks(newTasks);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="container">
